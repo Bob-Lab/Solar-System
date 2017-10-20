@@ -1,0 +1,132 @@
+$height: 600px;
+$modal-width: 1000px;
+
+.page {
+  min-height: $height;
+}
+
+.constellation-container,
+.page {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+swal-class-name,
+swal-icon,
+swal-text,
+swal-title {
+  display: none;
+}
+
+.swal-icon--custom {
+  img {
+    width: 125px;
+  }
+}
+
+.constellations-help {
+  .swal-title {
+    color: #ff0000;
+  }
+}
+
+.constellation-btn,
+.helper {
+  img {
+    width: 125px;
+
+    &:hover {
+      transform: scale(1.2,1.2);
+    }
+  }
+}
+
+.image-nav,
+.planet {
+  img {
+    height: 125px;
+
+    &:hover {
+      transform: scale(1.5,1.5) rotate(30deg);
+    }
+  }
+}
+
+.modal-dialog {
+  max-width: $modal-width;
+}
+
+.constellation-modal {
+  .modal-content {
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+.youtube {
+  max-height: $height - 100px;
+}
+
+main{
+  background-image: url('../images/backgrounds/galaxy.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#home {
+  // background-image: url('../images/backgrounds/galaxy.jpg');
+  // background-color: rgb(3, 30, 36);
+}
+
+#introduction {
+  // background-image: url("../images/backgrounds/starsky.jpg");
+  // background-color: rgb(3, 30, 36);
+}
+
+#planets {
+  // background-image: url("../images/backgrounds/starsky3.jpg");
+  // background-color: rgb(3, 30, 36);
+}
+
+#constellations {
+  // background-image: url("../images/backgrounds/starsky2.jpg");
+  // background-color: rgb(3, 30, 36);
+}
+
+#spring {
+  .constellation-container {
+    background-image: url('../images/seasons/spring.jpg');
+  }
+}
+
+#summer {
+  .constellation-container {
+    background-image: url('../images/seasons/summer.jpg');
+  }
+}
+
+#autumn {
+  .constellation-container {
+    background-image: url('../images/seasons/autumn.jpg');
+  }
+}
+
+#winter {
+  .constellation-container {
+    background-image: url('../images/seasons/winter.jpg');
+  }
+}
+
+#top {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.2,1.2);
+  }
+}

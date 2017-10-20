@@ -1,0 +1,19 @@
+$height: 600px;
+
+img[class='planet'] {
+  height: 50px;
+}
+
+.planet-position {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(200,200,200);
+}
+
+#universe {
+  min-height: $height;
+  background-image: url('../images/backgrounds/solar_test.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

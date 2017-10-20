@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- bootstrap 4 beta -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/24e3190daa.css">
+  <!-- sweetalert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- js -->
+  <script src="./assets/js/index.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="./assets/css/index.min.css">
+  <title>星際尋奇</title>
+</head>
+
+<body>
+  <main>
+    <div id="home" class="page d-flex align-items-center">
+      <div class="container-fluid">
+        <div class="row">
+          <div id="rocket" class="image-nav my-5 col d-flex justify-content-center" data-toggle="modal" data-target="#rocket-modal"><img src="./assets/images/navs/rocket.png" alt="rocket"></div>
+          <div id="cardboard" class="image-nav my-5 col d-flex justify-content-center" onclick="scrollSlide($('#introduction'));"><img src="./assets/images/navs/cardboard.png" alt="cardboard"></div>
+          <div id="planet" class="image-nav my-5 col d-flex justify-content-center" onclick="scrollSlide($('#planets'));"><img src="./assets/images/navs/planet.png" alt="planet"></div>
+          <div id="constellation" class="image-nav my-5 col d-flex justify-content-center" onclick="scrollSlide($('#constellations'));"><img src="./assets/images/navs/constellation.png" alt="constellation"></div>
+          <div id="sort" class="image-nav my-5 col d-flex justify-content-center"><a target="_blank" href="https://codepen.io/juliangarnier/full/idhuG"><img src="./assets/images/navs/sort.png" alt="sort"></a></div>
+        </div>
+      </div>
+    </div>
+    <div id="introduction" class="page d-flex align-items-center">
+      <div class="helper swal-helper">
+        <swal-title>不知道怎麼做嗎？別擔心，跟著影片試試看吧～這超級好玩的。</swal-title>
+        <swal-class-name>introduction-help</swal-class-name>
+        <img src="./assets/images/helpers/monster1.png" alt="monster helper" onclick="swalHelp(this);">
+      </div>
+      <div class="container">
+        <div class="youtube embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Z6T-VDmxn80" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div id="planets" class="page d-flex align-items-center">
+      <div class="helper swal-helper">
+        <swal-title>點每顆行星觀看介紹影片，看完後抽一張行星題目卡，如果不會的話可以上網找答案，現在開始探索行星吧!</swal-title>
+        <swal-class-name>planets-help</swal-class-name>
+        <img src="./assets/images/helpers/monster2.png" alt="monster helper" onclick="swalHelp(this);">
+      </div>
+      <div class="container">
+        <div class="row">
+          <div id="mercury" class="planet my-5 col-md-3 col-6 col d-flex justify-content-center" data-toggle="modal" data-target="#mercury-modal"><img src="./assets/images/planets/mercury.png" alt="mercury"></div>
+          <div id="venus" class="planet my-5 col-md-3 col-6 col d-flex justify-content-center" data-toggle="modal" data-target="#venus-modal"><img src="./assets/images/planets/venus.png" alt="venus"></div>
+          <div id="earth" class="planet my-5 col-md-3 col-6 col d-flex justify-content-center" data-toggle="modal" data-target="#earth-modal"><img src="./assets/images/planets/earth.png" alt="earth"></div>
+          <div id="mars" class="planet my-5 col-md-3 col-6 col d-flex justify-content-center" data-toggle="modal" data-target="#mars-modal"><img src="./assets/images/planets/mars.png" alt="mars"></div>
+          <div id="jupiter" class="planet my-5 col-md-3 col-6 col d-flex justify-content-center" data-toggle="modal" data-target="#jupiter-modal"><img src="./assets/images/planets/jupiter.png" alt="jupiter"></div>
+          <div id="saturn" class="planet my-5 col-md-3 col-6 col d-flex justify-content-center" data-toggle="modal" data-target="#saturn-modal"><img src="./assets/images/planets/saturn.png" alt="saturn"></div>
+          <div id="uranus" class="planet my-5 col-md-3 col-6 col d-flex justify-content-center" data-toggle="modal" data-target="#uranus-modal"><img src="./assets/images/planets/uranus.png" alt="uranus"></div>
+          <div id="neptune" class="planet my-5 col-md-3 col-6 col d-flex justify-content-center" data-toggle="modal" data-target="#neptune-modal"><img src="./assets/images/planets/neptune.png" alt="neptune"></div>
+        </div>
+      </div>
+    </div>
+    <div id="constellations" class="page d-flex align-items-center">
+      <div class="helper swal-helper">
+        <swal-title>動手做一做!</swal-title>
+        <swal-text>你們知道自己的星座可以在哪一個季節的天空看到嗎？並不是當月的星座就可以在那個月的天空看到唷。</swal-text>
+        <swal-icon>./assets/images/helpers/starcard.png</swal-icon>
+        <swal-class-name>constellations-help</swal-class-name>
+        <img src="./assets/images/helpers/monster3.png" alt="monster helper" onclick="swalHelp(this);">
+      </div>
+      <div class="container">
+        <div class="row">
+          <div id="spring" class="season my-5 col-12 col-lg-6">
+            <div class="card constellation-container">
+              <div class="card-body">
+                <h3 class="card-title text-center">春天的星座<small class="ml-2 text-muted">(3 ~ 5 月)</small></h3>
+                <p class="card-subtitle mb-2 text-white"></p>
+                <div class="d-flex justify-content-between">
+                  <div id="cancer" class="constellation-btn" data-toggle="modal" data-target="#cancer-modal"><img src="./assets/images/constellations/buttons/cancer.png" alt="cancer_btn"></div>
+                  <div id="leo" class="constellation-btn" data-toggle="modal" data-target="#leo-modal"><img src="./assets/images/constellations/buttons/leo.png" alt="leo_btn"></div>
+                  <div id="virgo" class="constellation-btn" data-toggle="modal" data-target="#virgo-modal"><img src="./assets/images/constellations/buttons/virgo.png" alt="virgo_btn"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="summer" class="season my-5 col-12 col-lg-6">
+            <div class="card constellation-container">
+              <div class="card-body">
+                <h3 class="card-title text-center">夏天的星座<small class="ml-2 text-muted">(6 ~ 8 月)</small></h3>
+                <p class="card-subtitle mb-2 text-white"></p>
+                <div class="d-flex justify-content-between">
+                  <div id="libra" class="constellation-btn" data-toggle="modal" data-target="#libra-modal"><img src="./assets/images/constellations/buttons/libra.png" alt="libra_btn"></div>
+                  <div id="scorpio" class="constellation-btn" data-toggle="modal" data-target="#scorpio-modal"><img src="./assets/images/constellations/buttons/scorpio.png" alt="scorpio_btn"></div>
+                  <div id="sagittarius" class="constellation-btn" data-toggle="modal" data-target="#sagittarius-modal"><img src="./assets/images/constellations/buttons/sagittarius.png" alt="sagittarius_btn"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="autumn" class="season my-5 col-12 col-lg-6">
+            <div class="card constellation-container">
+              <div class="card-body">
+                <h3 class="card-title text-center">秋天的星座<small class="ml-2 text-muted">(9 ~ 11 月)</small></h3>
+                <p class="card-subtitle mb-2 text-white"></p>
+                <div class="d-flex justify-content-between">
+                  <div id="capricorn" class="constellation-btn" data-toggle="modal" data-target="#capricorn-modal"><img src="./assets/images/constellations/buttons/capricorn.png" alt="capricorn_btn"></div>
+                  <div id="aquarius" class="constellation-btn" data-toggle="modal" data-target="#aquarius-modal"><img src="./assets/images/constellations/buttons/aquarius.png" alt="aquarius_btn"></div>
+                  <div id="pisces" class="constellation-btn" data-toggle="modal" data-target="#pisces-modal"><img src="./assets/images/constellations/buttons/pisces.png" alt="pisces_btn"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="winter" class="season my-5 col-12 col-lg-6">
+            <div class="card constellation-container">
+              <div class="card-body">
+                <h3 class="card-title text-center">冬天的星座<small class="ml-2 text-muted">(12 ~ 2 月)</small></h3>
+                <p class="card-subtitle mb-2 text-white"></p>
+                <div class="d-flex justify-content-between">
+                  <div id="aries" class="constellation-btn" data-toggle="modal" data-target="#aries-modal"><img src="./assets/images/constellations/buttons/aries.png" alt="aries_btn"></div>
+                  <div id="taurus" class="constellation-btn" data-toggle="modal" data-target="#taurus-modal"><img src="./assets/images/constellations/buttons/taurus.png" alt="taurus_btn"></div>
+                  <div id="gemini" class="constellation-btn" data-toggle="modal" data-target="#gemini-modal"><img src="./assets/images/constellations/buttons/gemini.png" alt="gemini_btn"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="top" class="text-white display-1" onclick="scrollSlide($('#home'), 250);">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+  </div>
+
+  <div class="modals">
+    <div class="modal fade" id="rocket-modal" tabindex="-1" role="dialog" aria-labelledby="rocket-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="video">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="youtube embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/g6PDHwleNk4" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="mercury-modal" tabindex="-1" role="dialog" aria-labelledby="mercury-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="video">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="youtube embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cKAz_SC57y4" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="venus-modal" tabindex="-1" role="dialog" aria-labelledby="venus-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="video">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="youtube embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qsiNLg7dLkg" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="earth-modal" tabindex="-1" role="dialog" aria-labelledby="earth-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="video">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="youtube embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4yC5-RWmFDc" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="mars-modal" tabindex="-1" role="dialog" aria-labelledby="mars-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="video">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="youtube embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/boBaM9gmS-E" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="jupiter-modal" tabindex="-1" role="dialog" aria-labelledby="jupiter-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="video">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="youtube embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7bZ5GkqVuWk" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="saturn-modal" tabindex="-1" role="dialog" aria-labelledby="saturn-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="video">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="youtube embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zmdBOYHlhSk" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="uranus-modal" tabindex="-1" role="dialog" aria-labelledby="uranus-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="video">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="youtube embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LRhtbErJZuw" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="neptune-modal" tabindex="-1" role="dialog" aria-labelledby="neptune-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="video">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="youtube embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nPomFtzn1iE" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="cancer-modal" tabindex="-1" role="dialog" aria-labelledby="cancer-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="cancer-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#cancer-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#cancer-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/cancer.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>cancer</h3>
+                    <p>cancer 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/cancer2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>cancer</h3>
+                    <p>cancer 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#cancer-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#cancer-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="leo-modal" tabindex="-1" role="dialog" aria-labelledby="leo-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="leo-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#leo-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#leo-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/leo.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>leo</h3>
+                    <p>leo 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/leo2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>leo</h3>
+                    <p>leo 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#leo-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#leo-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="virgo-modal" tabindex="-1" role="dialog" aria-labelledby="virgo-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="virgo-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#virgo-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#virgo-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/virgo.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>virgo</h3>
+                    <p>virgo 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/virgo2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>virgo</h3>
+                    <p>virgo 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#virgo-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#virgo-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="libra-modal" tabindex="-1" role="dialog" aria-labelledby="libra-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="libra-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#libra-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#libra-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/libra.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>libra</h3>
+                    <p>libra 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/libra2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>libra</h3>
+                    <p>libra 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#libra-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#libra-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="scorpio-modal" tabindex="-1" role="dialog" aria-labelledby="scorpio-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="scorpio-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#scorpio-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#scorpio-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/scorpio.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>scorpio</h3>
+                    <p>scorpio 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/scorpio2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>scorpio</h3>
+                    <p>scorpio 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#scorpio-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#scorpio-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="sagittarius-modal" tabindex="-1" role="dialog" aria-labelledby="sagittarius-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="sagittarius-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#sagittarius-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#sagittarius-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/sagittarius.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>sagittarius</h3>
+                    <p>sagittarius 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/sagittarius2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>sagittarius</h3>
+                    <p>sagittarius 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#sagittarius-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#sagittarius-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="capricorn-modal" tabindex="-1" role="dialog" aria-labelledby="capricorn-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="capricorn-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#capricorn-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#capricorn-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/capricorn.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>capricorn</h3>
+                    <p>capricorn 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/capricorn2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>capricorn</h3>
+                    <p>capricorn 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#capricorn-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#capricorn-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="aquarius-modal" tabindex="-1" role="dialog" aria-labelledby="aquarius-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="aquarius-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#aquarius-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#aquarius-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/aquarius.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>aquarius</h3>
+                    <p>aquarius 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/aquarius2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>aquarius</h3>
+                    <p>aquarius 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#aquarius-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#aquarius-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="pisces-modal" tabindex="-1" role="dialog" aria-labelledby="pisces-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="pisces-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#pisces-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#pisces-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/pisces.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>pisces</h3>
+                    <p>pisces 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/pisces2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>pisces</h3>
+                    <p>pisces 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#pisces-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#pisces-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="aries-modal" tabindex="-1" role="dialog" aria-labelledby="aries-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="aries-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#aries-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#aries-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/aries.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>aries</h3>
+                    <p>aries 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/aries2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>aries</h3>
+                    <p>aries 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#aries-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#aries-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="taurus-modal" tabindex="-1" role="dialog" aria-labelledby="taurus-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="taurus-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#taurus-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#taurus-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/taurus.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>taurus</h3>
+                    <p>taurus 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/taurus2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>taurus</h3>
+                    <p>taurus 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#taurus-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#taurus-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="gemini-modal" tabindex="-1" role="dialog" aria-labelledby="gemini-modal-label" aria-hidden="true">
+      <div class="modal-dialog constellation-modal" role="photo">
+        <div class="modal-content">
+          <div class="h1 text-white d-flex" data-dismiss="modal" aria-label="Close">
+            <i class="ml-auto fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="modal-body">
+            <div id="gemini-carousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#gemini-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#gemini-carousel" data-slide-to="1"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/gemini.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>gemini</h3>
+                    <p>gemini 星座描述</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block mx-auto h-100" src="./assets/images/constellations/photos/gemini2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>gemini</h3>
+                    <p>gemini 星座描述</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev display-4 text-white" href="#gemini-carousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next display-4 text-white" href="#gemini-carousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
